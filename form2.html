@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 Elements Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        fieldset {
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: white;
+        }
+
+        legend {
+            font-weight: bold;
+            color: #2196F3;
+            padding: 0 10px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .inline-label {
+            display: inline-block;
+            margin-right: 15px;
+            font-weight: normal;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        .checkbox-group,
+        .radio-group {
+            margin: 10px 0;
+        }
+
+        select[multiple] {
+            height: auto;
+            min-height: 100px;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        button {
+            background-color: #2196F3;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #1976D2;
+        }
+    </style>
+</head>
+<body>
+    <h1>HTML5 Elements Demo</h1>
+    <form action="#" method="POST">
+        <!-- Personal Information Section -->
+        <fieldset>
+            <legend>Personal Information</legend>
+            
+            <div class="form-group">
+                <label for="username">Full Name:</label>
+                <input type="text" id="username" name="username" 
+                       placeholder="Enter your name" required
+                       pattern="[A-Za-z ]{2,50}"
+                       title="Name should only contain letters and spaces">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" 
+                       placeholder="Enter your email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" 
+                       placeholder="Enter your phone number"
+                       pattern="[0-9]{10}"
+                       title="Please enter a valid 10-digit phone number">
+            </div>
+
+            <div class="form-group">
+                <label>Gender:</label>
+                <div class="radio-group">
+                    <input type="radio" id="male" name="gender" value="male" required>
+                    <label for="male" class="inline-label">Male</label>
+                    
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female" class="inline-label">Female</label>
+                    
+                    <input type="radio" id="other" name="gender" value="other">
+                    <label for="other" class="inline-label">Other</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Hobbies & Interests:</label>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="reading" name="hobby" value="reading">
+                    <label for="reading" class="inline-label">Reading</label>
+                    
+                    <input type="checkbox" id="sports" name="hobby" value="sports">
+                    <label for="sports" class="inline-label">Sports</label>
+                    
+                    <input type="checkbox" id="music" name="hobby" value="music">
+                    <label for="music" class="inline-label">Music</label>
+                    
+                    <input type="checkbox" id="travel" name="hobby" value="travel">
+                    <label for="travel" class="inline-label">Travel</label>
+                </div>
+            </div>
+        </fieldset>
+
+        <!-- Preferences Section -->
+        <fieldset>
+            <legend>Preferences</legend>
+
+            <div class="form-group">
+                <label for="food">Favorite Cuisines (Select multiple):</label>
+                <select id="food" name="food" size="3" multiple required>
+                    <option value="indian">Indian</option>
+                    <option value="italian">Italian</option>
+                    <option value="chinese">Chinese</option>
+                    <option value="mexican">Mexican</option>
+                    <option value="japanese">Japanese</option>
+                    <option value="thai">Thai</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="country">Country:</label>
+                <select id="country" name="country" required>
+                    <option value="">Select a country</option>
+                    <option value="us">United States</option>
+                    <option value="uk">United Kingdom</option>
+                    <option value="canada">Canada</option>
+                    <option value="australia">Australia</option>
+                    <option value="india">India</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="city">City:</label>
+                <input list="cities" id="city" name="city" 
+                       placeholder="Choose or type your city">
+                <datalist id="cities">
+                    <option value="New York">
+                    <option value="London">
+                    <option value="Paris">
+                    <option value="Tokyo">
+                    <option value="Sydney">
+                    <option value="Mumbai">
+                    <option value="Dubai">
+                </datalist>
+            </div>
+        </fieldset>
+
+        <!-- Additional Information Section -->
+        <fieldset>
+            <legend>Additional Information</legend>
+            
+            <div class="form-group">
+                <label for="bio">About Yourself:</label>
+                <textarea id="bio" name="bio" rows="4" 
+                          placeholder="Tell us about yourself..."
+                          maxlength="500"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="birthdate">Date of Birth:</label>
+                <input type="date" id="birthdate" name="birthdate" required>
+            </div>
+        </fieldset>
+
+        <button type="submit">Submit Form</button>
+    </form>
+</body>
+</html>
